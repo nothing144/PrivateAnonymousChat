@@ -111,11 +111,9 @@ Open [http://localhost:3000](http://localhost:3000)
 5. Messages are private between the two users
 
 ### Auto Cleanup:
-- When user reloads or closes browser:
-  - All public posts by that user are deleted
-  - All replies by that user are deleted
-  - All private messages sent/received by that user are deleted
-  - New ephemeral ID is generated on next visit
+- **Public Wall**: Messages persist and visible to everyone (deleted after 12 hours)
+- **Private Messages**: Deleted immediately when user reloads/closes browser
+- **New Ephemeral ID**: Generated on every page load
 
 ## Project Structure
 
