@@ -43,10 +43,23 @@ export default function SecretChatLite() {
     console.log('Generated ephemeral ID:', newId)
   }, [])
 
-  // Fetch initial posts and replies
+  // Fetch initial posts and replies + cleanup old messages
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // Delete messages older than 12 hours
+        const twelveHoursAgo = new Date(Date.now() - 12 * 60 * 60 * 1000).toISOString()
+        
+        await supabase
+          .from('public_posts')
+          .delete()
+          .lt('created_at', twelveHoursAgo)
+        
+        await supabase
+          .from('post_replies')
+          .delete()
+          .lt('created_at', twelveHoursAgo)
+
         // Fetch posts
         const { data: postsData, error: postsError } = await supabase
           .from('public_posts')
