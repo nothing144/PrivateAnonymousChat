@@ -204,14 +204,12 @@ export default function SecretChatLite() {
     }
   }, [userId])
 
-  // Cleanup messages on page unload
+  // Cleanup ONLY private messages on page unload (public posts persist)
   useEffect(() => {
     const handleBeforeUnload = async () => {
       const currentUserId = userIdRef.current
       if (currentUserId) {
-        // Delete user's posts, replies, and private messages
-        await supabase.from('public_posts').delete().eq('user_id', currentUserId)
-        await supabase.from('post_replies').delete().eq('user_id', currentUserId)
+        // Only delete private messages, keep public posts/replies
         await supabase.from('private_messages').delete().or(`from_user_id.eq.${currentUserId},to_user_id.eq.${currentUserId}`)
       }
     }
