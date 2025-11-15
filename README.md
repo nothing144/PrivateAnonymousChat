@@ -141,11 +141,12 @@ Open [http://localhost:3000](http://localhost:3000)
 - Instant message delivery
 - No polling required
 
-### Privacy
+### Privacy & Data Retention
 - No authentication required
 - No user data stored
-- Messages auto-delete on exit
-- Truly anonymous communication
+- **Public messages**: Persist for 12 hours (visible to all)
+- **Private messages**: Deleted immediately on browser close/reload
+- Truly anonymous communication with ephemeral IDs
 
 ## License
 
