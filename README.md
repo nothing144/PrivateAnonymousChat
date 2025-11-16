@@ -148,6 +148,12 @@ Open [https://chatanonymouslyy.netlify.app/](https://chatanonymouslyy.netlify.ap
 - **Private messages**: Deleted immediately on browser close/reload
 - Truly anonymous communication with ephemeral IDs
 
+## Additional Documentation
+
+- **[Git History Management](./GIT_HISTORY_MANAGEMENT.md)** - Guide on how to delete or reset commit history
+- **[Supabase Setup](./SUPABASE_SETUP.md)** - Database configuration instructions
+- **[Deployment Guide](./DEPLOYMENT.md)** - How to deploy to Netlify
+
 ## License
 
 MIT
